@@ -9,13 +9,7 @@ async function getWeather(apiKey, city) {
         var data = await response.json();
 
         if (response.ok) {
-            // Parse the relevant weather information
-            // https://api.openweathermap.org/data/2.5/weather?q=london&appid=dff737f9667ceea36e12968206553dde
-            // const temperature = data.main.temp;
-            // const description = data.weather[0].description;
-            // console.log(`Temperature in ${city}: ${temperature}°C, ${description}`);
             console.log(data);
-
             //to update the values
             document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
             document.querySelector(".description").innerHTML = data.weather[0].description;
